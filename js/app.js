@@ -54,6 +54,8 @@ const navList = [
 // Looping through navList and appending it to <ul> element
 for (let i =0; i < navList.length; i++) {
     let li = document.createElement("li");
+    // Appending <li> to parent element <ul>
+    myNav.append(li);
     // adding a class attribute to the <li> elements
     li.setAttribute("class", "menu__link"); 
     li.innerHTML = navList[i];
