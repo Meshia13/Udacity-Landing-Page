@@ -23,6 +23,9 @@
  * 
 */
 
+// Getting the <ul> element and assigning to variable
+const myNav = document.getElementById("navbar__list");
+
 
 /**
  * End Global Variables
@@ -39,6 +42,23 @@
 */
 
 // build the nav
+
+// Array of nav items, or <li> elements, to append to the <ul> element
+const navList = [
+    "Section 1", 
+    "Section 2",
+    "Section 3", 
+    "Section 4" 
+];
+
+// Looping through navList and appending it to <ul> element
+for (let i =0; i < navList.length; i++) {
+    let li = document.createElement("li");
+    // adding a class attribute to the <li> elements
+    li.setAttribute("class", "menu__link"); 
+    li.innerHTML = navList[i];
+    myNav.appendChild(li);
+}
 
 
 // Add class 'active' to section when near top of viewport
