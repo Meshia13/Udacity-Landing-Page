@@ -26,6 +26,9 @@
 // Getting the <ul> element and assigning to variable
 const myNav = document.getElementById("navbar__list");
 
+ // Selecting all sections
+ const sections = document.querySelectorAll("section");
+
 
 /**
  * End Global Variables
@@ -64,6 +67,27 @@ for (let i =0; i < navList.length; i++) {
 
 
 // Add class 'active' to section when near top of viewport
+
+// scroll
+document.addEventListener("scroll", function(){
+    
+    function allSections (section){
+
+        const topPage = section.getBoundingClientRect().top;
+
+        // class is active if it is between 0 - 100px
+        if (topPage > 0 && topPage < 100) {
+            section.classList.add("your-active-class");
+        }
+        else {
+            // if not, class is removed
+            section.classList.remove("your-active-class");
+        }
+    }
+
+    // looping through each section
+    sections.forEach(allSections);
+})
 
 
 // Scroll to anchor ID using scrollTO event
