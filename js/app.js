@@ -60,9 +60,12 @@ for (let i =0; i < navList.length; i++) {
     // Appending <li> to parent element <ul>
     myNav.append(li);
     // adding a class attribute to the <li> elements
-    li.setAttribute("class", "menu__link"); 
+    li.classList.add("menu__link");
+    // adding id atribute
+    li.setAttribute("href", `#section${i+1}`);
     li.innerHTML = navList[i];
     myNav.appendChild(li);
+    
 }
 
 
@@ -91,7 +94,6 @@ document.addEventListener("scroll", function(){
 
 
 // Scroll to anchor ID using scrollTO event
-
 
 /**
  * End Main Functions
