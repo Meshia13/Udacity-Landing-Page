@@ -44,14 +44,20 @@ const navList = [
  * Start Helper Functions
  * 
 */
+
+
 function getAnchorId() {
     const getId = document.querySelectorAll("[id]")
 
+    let arr = [];
     for (let i =1; i < getId.length; i++){
         const myIds = getId[i].id;
-        return myIds;
-    //    console.log(myIds)
+        // return myIds;
+      
+      
     }
+   
+    
     
 }
 
