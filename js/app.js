@@ -45,24 +45,25 @@ const navList = [
  * 
 */
 
-
-// function getAnchorId() {
-//     const getId = document.querySelectorAll("[id]")
-//     const sect1 = getId[1].id;
-//     const sect2 = getId[2].id;
-//     const sect3 = getId[3].id;
-//     const sect4 = getId[4].id;
-//     let arr = [];
-//     let myIDS = [sect1, sect2, sect3, sect4];
+function sectionClass() {
     
-//     arr.forEach
-//     arr.push(...getAnchorId());
-//     console.log(arr)
-// //    return myIDS;
-    
-// }
+    const sect = document.querySelectorAll("section");
 
-// console.log(getAnchorId())
+    for (const classes  of sect){
+        classes.classList.add("section-active")
+    }
+    
+}
+
+function createLinkIds() {
+    const sectId = document.querySelectorAll("section"); 
+    let sectList =[];
+    sectId.forEach(element => {
+        sectList.push(element.id)
+    })
+    return sectList;
+}
+
 
 /**
  * End Helper Functions
@@ -82,23 +83,29 @@ function buildNav () {
         li.classList.add("menu__link");
         // creating <a> element and links to anchor with section id
         let a = document.createElement("a");
-        a.setAttribute("href", `#section${i+1}`);
-        // a.setAttribute("href", `#${getAnchorId()}`);
+        a.setAttribute("href", `#${createLinkIds()[i]}`);
+        a.setAttribute("class", "nav__link");
+        // a.setAttribute("href", `#section${i+1}`);
+        if (i === 0){
+            a.classList.add("nav__link", "active")
+        }
+        
+        
         a.innerHTML = navList[i];
         li.appendChild(a);
         myNav.appendChild(li);
-        
+     
     }
 }
 
 // Add class 'active' to section when near top of viewport
 function makeActive() {
-    document.addEventListener("scroll", function(){
+    window.addEventListener("scroll", function(){
     
         function allSections (section){
     
             const topPage = section.getBoundingClientRect().top;
-    
+               
             // class is active if it is between 0 - 100px
             if (topPage > 0 && topPage < 100) {
                 section.classList.add("your-active-class");
@@ -116,18 +123,49 @@ function makeActive() {
 
 // Scroll to anchor ID using scrollTO event
 
+const menuLinkEl = document.querySelectorAll(".nav__link");
+const sectionEl = document.querySelectorAll(".your-active-class");
+
+
+function scrollToAnchor() {
+
+    
+
+    let current = "section1";
+    
+
+    window.addEventListener("scroll", () => {
+        sectionEl.forEach(sectEl => {
+            if (window.scrollY >= sectEl.offsetTop) {
+                current = sectEl.id;
+            }
+        })
+
+        menuLinkEl.forEach(menuLink => {
+            if (menuLinkEl.href.includes(current)) {
+                menuLink.classList.add("your-active-class");
+            }
+        })
+    })
+    sectionClass();
+}
+
+
 /**
  * End Main Functions
  * Begin Events
  * 
 */
-
+// sectionClass();
 // Build menu 
 buildNav ();
 
 // Scroll to section on link click
+scrollToAnchor()
 
 // Set sections as active
 makeActive();
+
+
 
 
