@@ -46,22 +46,23 @@ const navList = [
 */
 
 
-function getAnchorId() {
-    const getId = document.querySelectorAll("[id]")
-
-    let arr = [];
-    for (let i =1; i < getId.length; i++){
-        const myIds = getId[i].id;
-        // return myIds;
-      
-      
-    }
-   
+// function getAnchorId() {
+//     const getId = document.querySelectorAll("[id]")
+//     const sect1 = getId[1].id;
+//     const sect2 = getId[2].id;
+//     const sect3 = getId[3].id;
+//     const sect4 = getId[4].id;
+//     let arr = [];
+//     let myIDS = [sect1, sect2, sect3, sect4];
     
+//     arr.forEach
+//     arr.push(...getAnchorId());
+//     console.log(arr)
+// //    return myIDS;
     
-}
+// }
 
-
+// console.log(getAnchorId())
 
 /**
  * End Helper Functions
