@@ -44,27 +44,27 @@ const navList = [
  * Start Helper Functions
  * 
 */
-
-// Adding classes to the section tags
-function sectionClass() {
+// // get rid
+// // Adding classes to the section tags
+// function sectionClass() {
     
-    const sect = document.querySelectorAll("section");
+//     const sect = document.querySelectorAll("section");
 
-    for (const classes  of sect){
-        classes.classList.add("section-active")
-    }
+//     for (const classes  of sect){
+//         classes.classList.add("section-active")
+//     }
     
-}
-
-// getting "section" id values in order to use them as anchor links
-function createLinkIds() {
-    const sectId = document.querySelectorAll("section"); 
-    let sectList =[];
-    sectId.forEach(element => {
-        sectList.push(element.id)
-    })
-    return sectList;
-}
+// }
+// // get rid of
+// // getting "section" id values in order to use them as anchor links
+// function createLinkIds() {
+//     const sectId = document.querySelectorAll("section"); 
+//     let sectList =[];
+//     sectId.forEach(element => {
+//         sectList.push(element.id)
+//     })
+//     return sectList;
+// }
 
 
 /**
@@ -74,28 +74,24 @@ function createLinkIds() {
 */
 
 // build the nav
-function buildNav () {
-    // Looping through navList and appending it to <ul> element
-    for (let i =0; i < navList.length; i++) {
-        // creating <li> element
-        let li = document.createElement("li");
-        // Appending <li> to parent element <ul>
-        myNav.append(li);
-        // adding a class attribute to the <li> elements
-        li.classList.add("menu__link");
-        // creating <a> element and links to anchor with section id
-        let a = document.createElement("a");
-        a.setAttribute("href", `#${createLinkIds()[i]}`);
-        a.setAttribute("class", "nav__link");
-        if (i === 0){
-            a.classList.add("nav__link", "active")
-        }
-        a.innerHTML = navList[i];
-        li.appendChild(a);
+
+function buildNav() {
+    for(const section of sections ) {
+        const anchor = document.createElement("a");
+        const li = document.createElement("li");
+        li.className = "menu__link";
+        anchor.href = `#${section.id}`;
+        anchor.textContent = section.dataset.nav;
+
+        anchor.addEventListener("click", function(clickEvent) {
+            section.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+        });
+
+        li.appendChild(anchor);
         myNav.appendChild(li);
-     
     }
 }
+
 
 // Add class 'active' to section when near top of viewport
 function makeActive() {
