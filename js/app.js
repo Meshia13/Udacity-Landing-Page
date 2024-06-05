@@ -90,8 +90,6 @@ function buildNav () {
         if (i === 0){
             a.classList.add("nav__link", "active")
         }
-        
-        
         a.innerHTML = navList[i];
         li.appendChild(a);
         myNav.appendChild(li);
@@ -154,7 +152,7 @@ function scrollToAnchor() {
  * Begin Events
  * 
 */
-// sectionClass();
+
 // Build menu 
 buildNav ();
 
