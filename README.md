@@ -13,10 +13,11 @@
 
 ### Description
 
-You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Converting static project into an interactive  project by manipulating the DOM. It dynamically builds the navigation bar, scrolls to anchor from navigation and highlights sections in viewport.
 
 ### Sample
 
+Below is a sample of using the DOM to retrieve elements of the HTML page.
 
 ```JS
 // Getting the <ul> element and assigning to variable
