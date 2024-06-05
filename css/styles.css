@@ -8,6 +8,10 @@
  *
 */
 
+/* Added scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
 
 /* ---- Base Rules ---- */
 body {
