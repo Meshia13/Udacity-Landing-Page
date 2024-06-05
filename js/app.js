@@ -45,6 +45,7 @@ const navList = [
  * 
 */
 
+// Adding classes to the section tags
 function sectionClass() {
     
     const sect = document.querySelectorAll("section");
@@ -55,6 +56,7 @@ function sectionClass() {
     
 }
 
+// getting "section" id values in order to use them as anchor links
 function createLinkIds() {
     const sectId = document.querySelectorAll("section"); 
     let sectList =[];
@@ -85,7 +87,6 @@ function buildNav () {
         let a = document.createElement("a");
         a.setAttribute("href", `#${createLinkIds()[i]}`);
         a.setAttribute("class", "nav__link");
-        // a.setAttribute("href", `#section${i+1}`);
         if (i === 0){
             a.classList.add("nav__link", "active")
         }
@@ -123,13 +124,11 @@ function makeActive() {
 
 // Scroll to anchor ID using scrollTO event
 
-const menuLinkEl = document.querySelectorAll(".nav__link");
-const sectionEl = document.querySelectorAll(".your-active-class");
-
 
 function scrollToAnchor() {
 
-    
+    const menuLinkEl = document.querySelectorAll(".nav__link");
+    const sectionEl = document.querySelectorAll(".section-active");
 
     let current = "section1";
     
@@ -147,9 +146,8 @@ function scrollToAnchor() {
             }
         })
     })
-    sectionClass();
+    // sectionClass(); buildNav ()
 }
-
 
 /**
  * End Main Functions
