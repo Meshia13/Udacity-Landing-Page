@@ -6,7 +6,6 @@
   - [Description](#description)
   - [Sample](#sample)
   - [Dependencies](#Dependencies)
-- [Author](#author)
 
 
 ## Overview
