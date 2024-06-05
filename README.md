@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
   - [Description](#description)
-  - [Screenshot](#screenshot)
+  - [Sample](#sample)
   - [Dependencies](#Dependencies)
 - [Author](#author)
 
@@ -15,9 +15,16 @@
 
 You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
 
-### Screenshot
+### Sample
 
-<img src="/assets/images/CaseFile.png" width="150" height="100">
+
+```JS
+// Getting the <ul> element and assigning to variable
+const myNav = document.getElementById("navbar__list");
+
+// Selecting all sections
+const sections = document.querySelectorAll("section");
+```
 
 ### Dependencies
 
